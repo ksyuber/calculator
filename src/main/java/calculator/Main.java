@@ -35,9 +35,13 @@ public class Main {
 		}
 	}
 
-	public static double calculate(String input) {
+	public static double calculate(Double lastValue, String input) {
 		Stack<Double> numbers = new Stack<Double>();
 		Stack<Operator> operators = new Stack<Operator>();
+		
+		if (lastValue != null) {
+			numbers.push(lastValue);
+		}
 
 		String currentNumber = new String();
 
@@ -81,6 +85,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		Double lastValue = null;
 		while (true) {
 			try {
 				System.out.print("> ");
@@ -89,7 +94,8 @@ public class Main {
 				if (command.equals("exit")) {
 					break;
 				} else {
-					System.out.println(calculate(command));
+					lastValue = calculate(lastValue, command);
+					System.out.println(lastValue);
 				}
 			} catch (Exception e) {
 				System.out.println("Exception: " + e.toString());
