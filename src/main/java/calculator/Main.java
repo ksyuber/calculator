@@ -173,7 +173,7 @@ public class Main {
 				currentOperator = new OperatorBuilder()
 						.symbol(currentChar)
 						.build();
-			} else {
+			} else if (!isSpace) {
 				hasOperator = false;
 			}
 
