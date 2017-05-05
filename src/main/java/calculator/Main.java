@@ -206,8 +206,7 @@ public class Main {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		Cli
-		
+
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		Double lastValue = null;
 		try {
